@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Touhou</title>
+    <style>
+      body{
+        background-color: black;
+      }
+      #game{
+        text-align: center;
+      }
+      #volumeBgm{
+        position:relative; 
+        top: -520px;
+        left: -410px;
+        visibility: hidden;
+      }
+      #volumeSfx{
+        position: relative; 
+        top: -430px;
+        left: -547px;
+        visibility: hidden;
+      }
+      #fileInput{
+        position: relative; 
+        top: -220px;
+        left: -780px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div id="game">
+      <canvas id="screen" width="400" height="800"></canvas><canvas id="hud" width="250" height="800"></canvas>
+      <input id="volumeBgm" type=range min=0 max=100 value=50>
+      <input id="volumeSfx" type=range min=0 max=100 value=50>
+      <input id="fileInput" type="file">
+      <p id="debug" style="color: white;"></p>
+    </div>
+
+    <!-- ASSETS -->
+    <img id="background" src="assets/images/bg.png" style="display: none;">
+    <audio loop id="gamebgm" src="assets/sounds/bgm/bgmGame.mp3"></audio>
+    <audio loop id="bgmBossBattle" src="assets/sounds/bgm/bgmBossBattle.mp3"></audio>
+    <audio loop id="bgmGameOver" src="assets/sounds/bgm/bgmGameOver.mp3"></audio>
+    <audio loop id="bgmMainMenu" src="assets/sounds/bgm/bgmMainMenu.mp3"></audio>
+    <audio loop id="bgmVictory" src="assets/sounds/bgm/bgmVictory.mp3"></audio>
+
+    <!-- ENTITIES -->
+    <script Language="Javascript" src="js/entities/entity.js"></script>
+    <script Language="Javascript" src="js/entities/item.js"></script>
+    <script Language="Javascript" src="js/entities/enemies/enemy.js"></script>
+    <script Language="Javascript" src="js/entities/enemies/squid.js"></script>
+    <script Language="Javascript" src="js/entities/enemies/pumpkin.js"></script>
+    <script Language="Javascript" src="js/entities/enemies/skull.js"></script>
+    <script Language="Javascript" src="js/entities/enemies/boss.js"></script>
+    <script Language="Javascript" src="js/entities/players/player.js"></script>
+    <script Language="Javascript" src="js/entities/players/ladybug.js"></script>
+    <script Language="Javascript" src="js/entities/players/bee.js"></script>
+    <script Language="Javascript" src="js/entities/projectile.js"></script>
+    <script Language="Javascript" src="js/entities/specialShooter.js"></script>
+
+    <!-- ENGINE-->
+    <script Language="Javascript" src="js/engine.js"></script>
+
+    <!-- MENU-->
+    <script Language="Javascript" src="js/menus/menu.js"></script>
+    <script Language="Javascript" src="js/menus/changeControlsMenu.js"></script>
+    <script Language="Javascript" src="js/menus/characterSelectionMenu.js"></script>
+    <script Language="Javascript" src="js/menus/difficultyMenu.js"></script>
+    <script Language="Javascript" src="js/menus/gameOverMenu.js"></script>
+    <script Language="Javascript" src="js/menus/howToPlayMenu.js"></script>
+    <script Language="Javascript" src="js/menus/mainMenu.js"></script>
+    <script Language="Javascript" src="js/menus/pauseMenu.js"></script>
+    <script Language="Javascript" src="js/menus/setControlMenu.js"></script>
+    <script Language="Javascript" src="js/menus/settingsMenu.js"></script>
+    <script Language="Javascript" src="js/menus/victoryMenu.js"></script>
+
+    <!-- DATA -->
+    <script Language="Javascript" src="js/data/sprites.js"></script>
+    <script Language="Javascript" src="js/data/attackPatterns.js"></script>
+    <script Language="Javascript" src="js/data/keysName.js"></script>
+    <script Language="Javascript" src="js/data/levelDesign.js"></script>
+    <script Language="Javascript" src="js/data/playerControls.js"></script>
+
+    <!-- GAMELOOP-->
+    <script Language="Javascript" src="js/game.js"></script>
+
+    <!-- MAIN-->
+    <script Language="Javascript">
+      loadMainMenu();
+    </script>
+
+  </body>
+</html>
